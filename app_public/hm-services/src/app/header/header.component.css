@@ -1,0 +1,10 @@
+header{
+    padding: 6px;
+}
+button {
+    margin-top: 10px;
+    float: right;
+}
+.navbar-nav{
+    margin: auto;
+}
