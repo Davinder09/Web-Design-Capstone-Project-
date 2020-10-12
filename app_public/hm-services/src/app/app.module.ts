@@ -8,16 +8,18 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { HomepageComponent } from './homepage/homepage.component';
+import { ServicesComponent } from './services/services.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    HomepageComponent,
-    AboutusComponent
+    ServicesComponent,
+    AboutusComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -25,10 +27,13 @@ import { AboutusComponent } from './aboutus/aboutus.component';
     NgbModule,
     RouterModule.forRoot([
       {
-        path: 'homepage',component: HomepageComponent
+        path: 'services',component: ServicesComponent
       },
       {
       path: 'aboutus',component: AboutusComponent
+      },
+      {
+        path: 'login',component: LoginComponent
       },
     ])
   ],
