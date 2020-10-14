@@ -1,0 +1,14 @@
+.page-footer{
+    background-color: aliceblue;
+    margin-top: 50px;
+}
+
+footer.page-footer .footer-copyright {
+    overflow: hidden;
+    
+    background-color: gray;
+    
+}
+a {
+    color: #01233f ;
+}
