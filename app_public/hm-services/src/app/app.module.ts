@@ -11,6 +11,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ServicesComponent } from './services/services.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { LoginComponent } from './login/login.component';
+import { HttpClientModule } from '@angular/common/http';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,12 +22,15 @@ import { LoginComponent } from './login/login.component';
     FooterComponent,
     ServicesComponent,
     AboutusComponent,
-    LoginComponent
+    LoginComponent,
+    DashboardComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     NgbModule,
+    FormsModule,
     RouterModule.forRoot([
       {
         path: 'services',component: ServicesComponent
@@ -34,6 +40,9 @@ import { LoginComponent } from './login/login.component';
       },
       {
         path: 'login',component: LoginComponent
+      },
+      {
+        path: 'dashboard',component: DashboardComponent
       },
     ])
   ],
