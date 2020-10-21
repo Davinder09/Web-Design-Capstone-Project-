@@ -24,12 +24,6 @@ export class AdminService {
         map(res => res),
         catchError(error => throwError(error.message || error))
     );
-    // getting single book based on the selected id
-  // getSingleBook(bookId: String) :  Promise<void | Book> {
-  //   return this.http.get(this.booksUrl + '/' + bookId)
-  //               .toPromise()
-  //               .then(response => response.json() as Book)
-  //               .catch(this.handleError);
   }
 }
 

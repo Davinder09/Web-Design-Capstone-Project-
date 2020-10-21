@@ -9,7 +9,7 @@ const getSingleUser = function(req, res){
                 .json({ "message": "Inavlid email/password" }); 
             return;   
         }
-        User.findOne({email: req.body.email})
+        User.findOne({email: req.body.email, password: req.body.password})
             .exec((err,userdata)=>{
             if(!userdata){
                 res 
