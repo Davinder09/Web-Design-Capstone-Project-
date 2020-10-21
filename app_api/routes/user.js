@@ -4,13 +4,11 @@ const ctrlUser = require('../controllers/user');
 
 
 router
-    .route('/users')
-    .get(ctrlUser.getUsers)
-    .post(ctrlUser.createUser);
+    .route('/users')    
+    .post(ctrlUser.getSingleUser)
 
-router
-    .route('/users/:userid')
-    .get(ctrlUser.getSingleUser)
-    .put(ctrlUser.updateUser);
+// router
+//     .route('/users/:userid')
+//     .put(ctrlUser.updateUser);
 
 module.exports = router;

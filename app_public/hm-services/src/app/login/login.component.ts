@@ -18,10 +18,15 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  userData(value){
-    // this.values = value;
-    console.log(value);
-
+  userData(user){
+    if(user.email && user.password){
+      this.adminService.validateLogin(user).subscribe(result => {
+        console.log("Response: " + result);
+      }, error => {
+          console.log("OOPS! "+ error);
+        }
+      );
+    }
     // console.log(value.controls['name'].value);   
   }
 
