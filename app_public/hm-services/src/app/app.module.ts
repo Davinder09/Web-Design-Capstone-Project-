@@ -33,7 +33,7 @@ import { FormsModule } from '@angular/forms';
     FormsModule,
     RouterModule.forRoot([
       {
-        path: 'services',component: ServicesComponent
+        path: '',component: ServicesComponent
       },
       {
       path: 'aboutus',component: AboutusComponent
