@@ -12,4 +12,7 @@ export class ServicesComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  customerData(data){
+    console.log("result: ", data);
+  }
 }

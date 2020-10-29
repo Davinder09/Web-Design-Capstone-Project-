@@ -35,7 +35,7 @@ import { ContactComponent } from './components/contact/contact.component';
     FormsModule,
     RouterModule.forRoot([
       {
-        path: 'services',component: ServicesComponent
+        path: '',component: ServicesComponent
       },
       {
       path: 'aboutus',component: AboutusComponent
