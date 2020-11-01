@@ -1,15 +1,16 @@
 const mongoose = require('mongoose');
-const User = mongoose.model('users');
+const service_request = mongoose.model('service_request');
+
 
 const getSingleUser = function(req, res){
-    if (req.body && req.body.email && req.body.password){
-        if(!req.body.email && !req.body.password){
+    if (req.body && req.body.first_name && req.body.last_name && req.body.address && req.body.phone &&req.body.email ){
+        if(!req.body.first_name && !req.body.last_name && !req.body.address && !req.body.phone && !req.body.email){
             res 
                 .status(404) 
-                .json({ "message": "Inavlid email/password" }); 
+                .json({ "message": "Inavlid details" }); 
             return;   
         }
-        User.findOne({email: req.body.email, password: req.body.password})
+        User.findOne({email: req.body.email})
             .exec((err,userdata)=>{
             if(!userdata){
                 res 

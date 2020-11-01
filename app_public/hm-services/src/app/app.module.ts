@@ -14,6 +14,7 @@ import { LoginComponent } from './login/login.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { FormsModule } from '@angular/forms';
+import { ContactComponent } from './components/contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { FormsModule } from '@angular/forms';
     ServicesComponent,
     AboutusComponent,
     LoginComponent,
-    DashboardComponent
+    DashboardComponent,
+    ContactComponent
   ],
   imports: [
     HttpClientModule,
@@ -33,7 +35,7 @@ import { FormsModule } from '@angular/forms';
     FormsModule,
     RouterModule.forRoot([
       {
-        path: 'services',component: ServicesComponent
+        path: '',component: ServicesComponent
       },
       {
       path: 'aboutus',component: AboutusComponent

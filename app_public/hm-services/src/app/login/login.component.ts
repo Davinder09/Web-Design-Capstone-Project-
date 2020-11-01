@@ -18,29 +18,16 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  userData(user){
-    if(user.email && user.password){
-      this.adminService.validateLogin(user).subscribe(result => {
-        console.log("Response: " + result);
+  userData(user) {
+    if(user.email && user.password) {
+        this.adminService.validateLogin(user).subscribe(result => {
+        this.router.navigateByUrl('/dashboard');
       }, error => {
-          console.log("OOPS! "+ error);
-        }
-      );
+        console.log('error is ', error);
+        alert("Invalid Email/Password. Please try again.");
+      });
+    } else {
+        alert('enter user name and password');        
     }
-    // console.log(value.controls['name'].value);   
   }
-
-  // validateLogin(user) {
-  //   if(user.email && user.password) {
-  //       this.adminService.validateLogin(user).subscribe(result => {
-  //       console.log('result is ', result);
-  //       this.router.navigateByUrl('/dashboard');
-  //     }, error => {
-  //       console.log('error is ', error);
-  //     });
-  //   } else {
-  //       alert('enter user name and password');        
-  //   }
-  // }
-
 }
