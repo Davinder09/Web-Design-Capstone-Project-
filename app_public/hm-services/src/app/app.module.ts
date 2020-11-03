@@ -15,6 +15,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { FormsModule } from '@angular/forms';
 import { ContactComponent } from './components/contact/contact.component';
+import { AddEmployeeComponent } from './add-employee/add-employee.component';
+import { EmployeeComponent } from './update/employee/employee.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { ContactComponent } from './components/contact/contact.component';
     AboutusComponent,
     LoginComponent,
     DashboardComponent,
-    ContactComponent
+    ContactComponent,
+    AddEmployeeComponent,
+    EmployeeComponent
   ],
   imports: [
     HttpClientModule,
@@ -46,9 +50,13 @@ import { ContactComponent } from './components/contact/contact.component';
       {
         path: 'dashboard',component: DashboardComponent
       },
+      {
+        path: 'addemployee',component: AddEmployeeComponent
+        },
     ])
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
