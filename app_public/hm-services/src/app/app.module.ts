@@ -14,9 +14,10 @@ import { LoginComponent } from './login/login.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { FormsModule } from '@angular/forms';
-import { ContactComponent } from './components/contact/contact.component';
 import { AddEmployeeComponent } from './add-employee/add-employee.component';
-import { EmployeeComponent } from './update/employee/employee.component';
+import { DeleteEmployeeComponent } from './delete-employee/delete-employee.component';
+import { UpdateEmployeeComponent } from './update-employee/update-employee.component';
+
 
 @NgModule({
   declarations: [
@@ -27,9 +28,11 @@ import { EmployeeComponent } from './update/employee/employee.component';
     AboutusComponent,
     LoginComponent,
     DashboardComponent,
-    ContactComponent,
     AddEmployeeComponent,
-    EmployeeComponent
+    DeleteEmployeeComponent,
+    UpdateEmployeeComponent,
+   
+    
   ],
   imports: [
     HttpClientModule,
