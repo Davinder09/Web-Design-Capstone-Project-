@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CustomerRequestService } from '../customer-request.service';
+import { CustomerRequestService } from '../HMS services/customer-request.service';
 import { Request } from './../model/request';
 
 @Component({

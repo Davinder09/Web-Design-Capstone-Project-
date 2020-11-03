@@ -14,7 +14,6 @@ import { LoginComponent } from './login/login.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { FormsModule } from '@angular/forms';
-import { ContactComponent } from './components/contact/contact.component';
 import { EmployeeComponent } from './employee/employee.component';
 
 @NgModule({
@@ -26,7 +25,6 @@ import { EmployeeComponent } from './employee/employee.component';
     AboutusComponent,
     LoginComponent,
     DashboardComponent,
-    ContactComponent,
     EmployeeComponent
   ],
   imports: [
@@ -46,11 +44,11 @@ import { EmployeeComponent } from './employee/employee.component';
         path: 'login',component: LoginComponent
       },
       {
-        path: 'dashboard',component: DashboardComponent
-      },
-      {
-        path: 'employee',component: EmployeeComponent
-      },
+        path: 'dashboard',component: DashboardComponent,
+        children: [
+          { path: 'employee', component: EmployeeComponent }
+        ]
+      }
     ])
   ],
   providers: [],
