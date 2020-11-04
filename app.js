@@ -38,6 +38,11 @@ app.use('/users', usersRouter);
 const apiRouter =  require('./app_api/routes/user');
 app.use('/api', apiRouter);
 
+var serviceRouter = require('./app_server/routes/service_request');
+app.use('/service_request', serviceRouter);
+
+const serviceRequestAPIRouter =  require('./app_api/routes/service_request');
+app.use('/api', serviceRequestAPIRouter);
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'app_public')));
 
