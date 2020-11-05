@@ -15,6 +15,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { FormsModule } from '@angular/forms';
 import { EmployeeComponent } from './employee/employee.component';
+import { AddEmployeeComponent } from './add-employee/add-employee.component';
+import { DeleteEmployeeComponent } from './delete-employee/delete-employee.component';
+import { UpdateEmployeeComponent } from './update-employee/update-employee.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +28,10 @@ import { EmployeeComponent } from './employee/employee.component';
     AboutusComponent,
     LoginComponent,
     DashboardComponent,
-    EmployeeComponent
+    EmployeeComponent,
+    AddEmployeeComponent,
+    DeleteEmployeeComponent,
+    UpdateEmployeeComponent,
   ],
   imports: [
     HttpClientModule,
@@ -48,10 +54,14 @@ import { EmployeeComponent } from './employee/employee.component';
         children: [
           { path: 'employee', component: EmployeeComponent }
         ]
-      }
+      },
+      {
+        path: 'addemployee',component: AddEmployeeComponent
+        }
     ])
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
