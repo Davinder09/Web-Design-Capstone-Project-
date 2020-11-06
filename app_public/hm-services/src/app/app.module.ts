@@ -49,15 +49,15 @@ import { UpdateEmployeeComponent } from './update-employee/update-employee.compo
       {
         path: 'login',component: LoginComponent
       },
+      { path: 'addemployee',component: AddEmployeeComponent },
       {
         path: 'dashboard',component: DashboardComponent,
         children: [
-          { path: 'employee', component: EmployeeComponent }
+          { path: 'employee', component: EmployeeComponent },
+          
+          { path: 'updateEmployee',component: UpdateEmployeeComponent}
         ]
-      },
-      {
-        path: 'addemployee',component: AddEmployeeComponent
-        }
+      } 
     ])
   ],
   providers: [],

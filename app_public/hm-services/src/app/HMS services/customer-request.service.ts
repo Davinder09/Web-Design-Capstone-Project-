@@ -14,7 +14,7 @@ export class CustomerRequestService {
   constructor(private http: HttpClient) { }
 
   customerRequest(request: Request){
-        return this.http.post(this.url + '/api/request',{
+        return this.http.post(this.url + '/api/service_request',{
           customer_info : {
             first_name : request.customer_info.first_name,
             last_name : request.customer_info.last_name,
