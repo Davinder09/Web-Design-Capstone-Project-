@@ -12,4 +12,7 @@ export class AddEmployeeComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  employeeData(data){
+    
+  }
 }

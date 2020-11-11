@@ -11,5 +11,6 @@ router
     .route('/employee/:employeeid')
     .put(ctrlEmployee.updateEmployee)
     .delete(ctrlEmployee.deleteEmployee)
+    .get(ctrlEmployee.getEmployeeById)
 
 module.exports = router;

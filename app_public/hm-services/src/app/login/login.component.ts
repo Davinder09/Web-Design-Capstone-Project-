@@ -16,12 +16,23 @@ export class LoginComponent implements OnInit {
   constructor(private adminService: AdminService,  private router: Router) {}
 
   ngOnInit(): void {
+    if(localStorage.getItem('userid')){
+      localStorage.setItem('isUserLogin', "true");
+    }else{
+      localStorage.setItem('isUserLogin', "false");
+    }
   }
 
   userData(user) {
     if(user.email && user.password) {
-        this.adminService.validateLogin(user).subscribe(result => {
-        this.router.navigateByUrl('/dashboard');
+        this.adminService.validateLogin(user).subscribe((result: any) => {
+        localStorage.setItem('userid', result._id);
+        //set to maintain user login
+        localStorage.setItem('isUserLogin', "true");
+        this.router.navigate(['/employee'])
+                    .then(() => {
+                      window.location.reload();
+                    });
       }, error => {
         console.log('error is ', error);
         alert("Invalid Email/Password. Please try again.");

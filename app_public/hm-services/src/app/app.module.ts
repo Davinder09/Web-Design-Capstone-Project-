@@ -49,15 +49,25 @@ import { UpdateEmployeeComponent } from './update-employee/update-employee.compo
       {
         path: 'login',component: LoginComponent
       },
-      { path: 'addemployee',component: AddEmployeeComponent },
       {
-        path: 'dashboard',component: DashboardComponent,
-        children: [
-          { path: 'employee', component: EmployeeComponent },
-          
-          { path: 'updateEmployee',component: UpdateEmployeeComponent}
-        ]
-      } 
+         path: 'addEmployee',component: AddEmployeeComponent 
+      },
+      {
+        path: '',component: DeleteEmployeeComponent 
+     },
+      {
+         path: 'employee/:employeeId',component: UpdateEmployeeComponent
+      },
+      // {
+      //   path: 'dashboard',component: DashboardComponent,
+      // },
+      {
+        path: 'employee',component: EmployeeComponent,
+      }
+        // children: [
+        //   { path: 'employee', component: EmployeeComponent }
+        // ]
+      // } 
     ])
   ],
   providers: [],

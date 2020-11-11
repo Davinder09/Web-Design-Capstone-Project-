@@ -24,5 +24,27 @@ export class EmployeeServiceService {
    )
   }
 
+
+  getEmployeeById(employeeId: String)  {
+    return this.http.get(this.url + '/api/employee/' + employeeId)
+         .pipe(
+          map((data: Employee) => {
+            return data;
+          }), catchError( error => {
+            return throwError( 'Something went wrong!' );
+          })
+        )
+  }
+
+  // updateEmployee(employeeId: String, employee: Employee) :  Promise<void | Employee> {
+  //   return this.http.put(this.url + '/api/employee' + employeeId, employee)
+  //               .toPromise()
+  //               .then(response => response.json() as Employee)
+  //               .catch(this.handleError);
+  // }
+  // private handleError (error: any){
+  //   console.log("error");
+  // }
+
 }
 

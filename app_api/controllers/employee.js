@@ -98,10 +98,38 @@ const getEmployee = function(req, res){
         }
     };
 
+    const getEmployeeById = function(req, res){
+        if (req.params && req.params.employeeid){
+            Employee
+            .findById(req.params.employeeid)
+            .exec((err, employeedata) => {
+                if(!employeedata){
+                    res
+                    .status(404)
+                    .json({"message" : "book id not found"});
+                    return;
+                } else if (err) {
+                    res
+                    .status(404)
+                    .json(err);
+                    return;
+                }
+                res
+                .status(200)
+                .json(employeedata);
+            });
+        } else {
+            res
+            .status(404)
+            .json({"message" : "No book id in request"});
+        }
+    };
+
 
 module.exports ={
     getEmployee,
     createEmployee,
     updateEmployee,
-    deleteEmployee
+    deleteEmployee,
+    getEmployeeById,
 }
