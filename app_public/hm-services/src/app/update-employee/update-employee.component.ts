@@ -34,20 +34,26 @@ export class UpdateEmployeeComponent implements OnInit {
      if(this.empId){
        this.employeeService.getEmployeeById(this.empId).subscribe(result => {
          this.employee = result;
-         console.log(this.employee);
        }, error => {
         console.log('error is ', error);
       });
      }
   }
 
-
-  updateEmployee(nn){
-      
+  updateEmployee(updatedEmployee){
+      console.log(updatedEmployee);
+      if(updatedEmployee.first_name != "" && updatedEmployee.last_name != "" && updatedEmployee.phone != "" && updatedEmployee.address != "" && updatedEmployee.email != "") {
+        this.employeeService.updateEmployee(this.empId, updatedEmployee).subscribe((result: any) => {
+        alert("Employee updated successfully");
+        this.router.navigateByUrl('/employee');
+      }, error => {
+        console.log('error is ', error);
+        alert(error.message);
+      });
+    } else {
+        alert('Invalid Data');        
+    }
   }
-   
-   
-
 
   }
 

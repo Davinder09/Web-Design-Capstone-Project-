@@ -36,15 +36,18 @@ export class EmployeeServiceService {
         )
   }
 
-  // updateEmployee(employeeId: String, employee: Employee) :  Promise<void | Employee> {
-  //   return this.http.put(this.url + '/api/employee' + employeeId, employee)
-  //               .toPromise()
-  //               .then(response => response.json() as Employee)
-  //               .catch(this.handleError);
-  // }
-  // private handleError (error: any){
-  //   console.log("error");
-  // }
-
+  updateEmployee(employeeId: String, employee: Employee) {
+    return this.http.put(this.url + '/api/employee/' + employeeId, {
+      email : employee.email,
+      phone : employee.phone,
+      first_name: employee.first_name,
+      last_name: employee.last_name,
+      address: employee.address
+    }).pipe(
+        map(res => res),
+        catchError(error => throwError(error.message || error))
+    );
+  }
+ 
 }
 

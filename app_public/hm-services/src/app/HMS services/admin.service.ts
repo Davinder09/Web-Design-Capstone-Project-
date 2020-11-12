@@ -15,8 +15,7 @@ export class AdminService {
   
   constructor(private http: HttpClient) {}
 
-  validateLogin(user: User){  
-    console.log(user);
+  validateLogin(user: User){
     return this.http.post(this.url + '/api/users',{
       email : user.email,
       password : user.password
