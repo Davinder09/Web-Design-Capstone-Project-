@@ -19,8 +19,13 @@ export class AddEmployeeComponent implements OnInit {
   addEmployee(employeeData: Employee){
     if(employeeData.first_name.trim() != "" && employeeData.last_name.trim() != "" && employeeData.phone.trim() != "" && employeeData.address.trim() != "" && employeeData.email.trim() != "") {
       this.employeeService.addEmployee(employeeData).subscribe((result: any) => {
-      alert("Employee Added successfully");
-      this.router.navigateByUrl('/employee');
+        if(result.message){
+          alert(result.message);
+        }else{
+          alert("Employee Added successfully");
+          this.router.navigateByUrl('/employee');
+        }
+      
     }, error => {
       console.log('error is ', error);
       alert(error.message);

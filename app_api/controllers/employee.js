@@ -16,22 +16,32 @@ const getEmployee = function(req, res){
 };
 
     const createEmployee = function (req,res){
-        Employee.create({
-            first_name: req.body.first_name,
-            last_name: req.body.last_name,
-            email: req.body.email,
-            phone: req.body.phone,
-            address: req.body.address
-        },(err,employeedata)=> {
-            if(err){
-                res
-                    .status(404)
-                    .json(err);    
-            }
-            else{
-                res
-                    .status(200)
-                    .json(employeedata);  
+
+        Employee.find({email : req.body.email}, function (err, docs) {
+            if (!docs.length){
+                Employee.create({
+                    first_name: req.body.first_name,
+                    last_name: req.body.last_name,
+                    email: req.body.email,
+                    phone: req.body.phone,
+                    address: req.body.address
+                },(err,employeedata)=> {
+                    if(err){
+                        res
+                            .status(404)
+                            .json(err);    
+                    }
+                    else{
+                        res
+                            .status(200)
+                            .json(employeedata);  
+                    }
+                });
+            }else{                
+                res 
+                .status(200) 
+                .json({ "message": "Email Id already exists." }); 
+                return;
             }
         });
     };
