@@ -24,7 +24,8 @@ export class CustomerRequestService {
           },
           snow_removal : request.snow_removal,
           grass_cutting : request.grass_cutting,
-          indoor_cleaning : request.indoor_cleaning          
+          indoor_cleaning : request.indoor_cleaning,
+          service_date: request.service_date         
         }).pipe(
             map(res => res),
             catchError(error => throwError(error.message || error))

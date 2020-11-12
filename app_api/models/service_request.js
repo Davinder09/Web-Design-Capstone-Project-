@@ -29,7 +29,7 @@ const services = new mongoose.Schema({
         type: Boolean
     },
     service_date: {
-        type: Date
+        type: String
     },
     service_status: {
         type: Boolean
