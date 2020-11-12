@@ -16,7 +16,6 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { FormsModule } from '@angular/forms';
 import { EmployeeComponent } from './employee/employee.component';
 import { AddEmployeeComponent } from './add-employee/add-employee.component';
-import { DeleteEmployeeComponent } from './delete-employee/delete-employee.component';
 import { UpdateEmployeeComponent } from './update-employee/update-employee.component';
 
 @NgModule({
@@ -30,7 +29,6 @@ import { UpdateEmployeeComponent } from './update-employee/update-employee.compo
     DashboardComponent,
     EmployeeComponent,
     AddEmployeeComponent,
-    DeleteEmployeeComponent,
     UpdateEmployeeComponent,
   ],
   imports: [
@@ -53,21 +51,11 @@ import { UpdateEmployeeComponent } from './update-employee/update-employee.compo
          path: 'addEmployee',component: AddEmployeeComponent 
       },
       {
-        path: '',component: DeleteEmployeeComponent 
-     },
-      {
          path: 'employee/:employeeId',component: UpdateEmployeeComponent
       },
-      // {
-      //   path: 'dashboard',component: DashboardComponent,
-      // },
       {
         path: 'employee',component: EmployeeComponent,
       }
-        // children: [
-        //   { path: 'employee', component: EmployeeComponent }
-        // ]
-      // } 
     ])
   ],
   providers: [],

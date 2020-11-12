@@ -18,14 +18,22 @@ export class EmployeeComponent implements OnInit {
   ngOnInit(): void {
     this.employeeService.getEmployee().subscribe(result => {
       this.employees = result;
-      console.log(this.employees);
     }, error => {
       console.log('error is ', error);
     });
   }
 
 
-  deleteEmployee(dd){
+  deleteEmployee(employeeid){
+    this.employeeService.deleteEmployeeById(employeeid).subscribe(result => {
+      alert("Employee Deleted Sucessfully");
+      this.router.navigate(['/employee'])
+                    .then(() => {
+                      window.location.reload();
+                    });
+    }, error => {
+      console.log('error is ', error);
+    });
 
   }
 }

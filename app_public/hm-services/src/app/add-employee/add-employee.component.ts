@@ -17,7 +17,6 @@ export class AddEmployeeComponent implements OnInit {
   }
 
   addEmployee(employeeData: Employee){
-    console.log(employeeData);
     if(employeeData.first_name.trim() != "" && employeeData.last_name.trim() != "" && employeeData.phone.trim() != "" && employeeData.address.trim() != "" && employeeData.email.trim() != "") {
       this.employeeService.addEmployee(employeeData).subscribe((result: any) => {
       alert("Employee Added successfully");

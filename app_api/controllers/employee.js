@@ -35,6 +35,7 @@ const getEmployee = function(req, res){
             }
         });
     };
+
     const updateEmployee = function (req,res){
         if(!req.params.employeeid){
             res 
@@ -106,7 +107,7 @@ const getEmployee = function(req, res){
                 if(!employeedata){
                     res
                     .status(404)
-                    .json({"message" : "book id not found"});
+                    .json({"message" : "Employee id not found"});
                     return;
                 } else if (err) {
                     res
@@ -121,7 +122,7 @@ const getEmployee = function(req, res){
         } else {
             res
             .status(404)
-            .json({"message" : "No book id in request"});
+            .json({"message" : "No Employee id in request"});
         }
     };
 

@@ -61,6 +61,17 @@ export class EmployeeServiceService {
         catchError(error => throwError(error.message || error))
     );
   }
+
+  deleteEmployeeById(employeeId: String)  {
+    return this.http.delete(this.url + '/api/employee/' + employeeId)
+         .pipe(
+          map((data: Employee) => {
+            return data;
+          }), catchError( error => {
+            return throwError( 'Something went wrong!' );
+          })
+        )
+  }
  
 }
 

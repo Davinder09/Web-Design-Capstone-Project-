@@ -15,14 +15,14 @@
       <tbody>
         <tr *ngFor="let list of employees">
   
-          <td> {{list.first_name}}</td>
+          <td> {{ list.first_name }}</td>
           <td> {{ list.last_name }}</td>
           <td> {{ list.phone }}</td>
           <td> {{ list.email }}</td>
           <td> {{ list.address }}</td>
 
           <td><a routerLink="{{'/employee/' + list._id}}">Update</a></td>
-          <td><button class="btn btn-primary" (click) = "deleteEmployee()">Delete</button></td> 
+          <td><button class="btn btn-primary" (click) = "deleteEmployee(list._id)">Delete</button></td> 
           
         </tr>
       </tbody>
