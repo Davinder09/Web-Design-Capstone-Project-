@@ -41,8 +41,7 @@ export class UpdateEmployeeComponent implements OnInit {
   }
 
   updateEmployee(updatedEmployee){
-      console.log(updatedEmployee);
-      if(updatedEmployee.first_name != "" && updatedEmployee.last_name != "" && updatedEmployee.phone != "" && updatedEmployee.address != "" && updatedEmployee.email != "") {
+      if(updatedEmployee.first_name.trim() != "" && updatedEmployee.last_name.trim() != "" && updatedEmployee.phone.trim() != "" && updatedEmployee.address.trim() != "" && updatedEmployee.email.trim() != "") {
         this.employeeService.updateEmployee(this.empId, updatedEmployee).subscribe((result: any) => {
         alert("Employee updated successfully");
         this.router.navigateByUrl('/employee');
@@ -51,7 +50,7 @@ export class UpdateEmployeeComponent implements OnInit {
         alert(error.message);
       });
     } else {
-        alert('Invalid Data');        
+        alert('Incomplete Data');        
     }
   }
 
