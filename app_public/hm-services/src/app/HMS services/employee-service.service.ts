@@ -48,6 +48,19 @@ export class EmployeeServiceService {
         catchError(error => throwError(error.message || error))
     );
   }
+
+  addEmployee(employee: Employee) {
+    return this.http.post(this.url + '/api/employee', {
+      email : employee.email,
+      phone : employee.phone,
+      first_name: employee.first_name,
+      last_name: employee.last_name,
+      address: employee.address
+    }).pipe(
+        map(res => res),
+        catchError(error => throwError(error.message || error))
+    );
+  }
  
 }
 

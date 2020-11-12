@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EmployeeServiceService } from '../HMS services/employee-service.service';
 import { ActivatedRoute, Params, Router } from '@angular/router';
-import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Employee } from '../model/employee';
-import { switchMap } from 'rxjs/operators';
 
 
 @Component({
@@ -22,7 +20,6 @@ export class UpdateEmployeeComponent implements OnInit {
   constructor(
     private employeeService: EmployeeServiceService,
     private route: ActivatedRoute,
-    private http: HttpClient,
     private router: Router
       ) { }
 
