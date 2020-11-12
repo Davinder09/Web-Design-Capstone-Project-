@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
         localStorage.setItem('userid', result._id);
         //set to maintain user login
         localStorage.setItem('isUserLogin', "true");
-        this.router.navigate(['/employee'])
+        this.router.navigate(['/dashboard'])
                     .then(() => {
                       window.location.reload();
                     });

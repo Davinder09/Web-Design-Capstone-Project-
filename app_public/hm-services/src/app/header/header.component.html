@@ -5,14 +5,14 @@
             <nav class="navbar navbar-expand-md">
                   <ul class="navbar-nav">   
                     <li class="nav-item" *ngIf="admin">
+                      <a class="nav-link" routerLink="dashboard">Service Requests</a>
+                    </li> 
+                    <li class="nav-item" *ngIf="admin">
                       <a class="nav-link" routerLink="employee">Employee</a>
                     </li>
                     <li class="nav-item" *ngIf="admin">
                       <a class="nav-link" routerLink="addEmployee">Add Employee</a>
-                    </li>
-                    <!-- <li class="nav-item" *ngIf="admin">
-                      <a class="nav-link" routerLink="">Service Requests</a>
-                    </li>            -->
+                    </li>                              
                     <li class="nav-item" *ngIf="!admin">
                       <a class="nav-link" routerLink="">Services</a>
                     </li>

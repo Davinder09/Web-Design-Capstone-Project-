@@ -55,6 +55,9 @@ import { UpdateEmployeeComponent } from './update-employee/update-employee.compo
       },
       {
         path: 'employee',component: EmployeeComponent,
+      },
+      {
+        path: 'dashboard',component: DashboardComponent,
       }
     ])
   ],
