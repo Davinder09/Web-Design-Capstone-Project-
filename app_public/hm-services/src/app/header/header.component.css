@@ -1,10 +1,18 @@
+
 header{
     padding: 6px;
-    background-color: gray;
+    background-color: #584e4e54;
+    margin-top: 8px;
+    border-radius: 10px;
 }
 button {
     margin-top: 10px;
     float: right;
+    padding: 7px 15px 7px 15px;
+    border-radius: 10px;
+    border-style: none;
+    background-color: #01233f;
+    color: #ffffff;
 }
 .navbar-nav{
     margin: auto;
@@ -13,3 +21,7 @@ button {
     color: #01233f;
     font-size: 20px;
 }
+.logo{
+    margin-top: 7px;
+}
+
