@@ -14,10 +14,9 @@ import { LoginComponent } from './login/login.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { FormsModule } from '@angular/forms';
+import { EmployeeComponent } from './employee/employee.component';
 import { AddEmployeeComponent } from './add-employee/add-employee.component';
-import { DeleteEmployeeComponent } from './delete-employee/delete-employee.component';
 import { UpdateEmployeeComponent } from './update-employee/update-employee.component';
-
 
 @NgModule({
   declarations: [
@@ -28,11 +27,9 @@ import { UpdateEmployeeComponent } from './update-employee/update-employee.compo
     AboutusComponent,
     LoginComponent,
     DashboardComponent,
+    EmployeeComponent,
     AddEmployeeComponent,
-    DeleteEmployeeComponent,
     UpdateEmployeeComponent,
-   
-    
   ],
   imports: [
     HttpClientModule,
@@ -51,11 +48,17 @@ import { UpdateEmployeeComponent } from './update-employee/update-employee.compo
         path: 'login',component: LoginComponent
       },
       {
-        path: 'dashboard',component: DashboardComponent
+         path: 'addEmployee',component: AddEmployeeComponent 
       },
       {
-        path: 'addemployee',component: AddEmployeeComponent
-        },
+         path: 'employee/:employeeId',component: UpdateEmployeeComponent
+      },
+      {
+        path: 'employee',component: EmployeeComponent,
+      },
+      {
+        path: 'dashboard',component: DashboardComponent,
+      }
     ])
   ],
   providers: [],

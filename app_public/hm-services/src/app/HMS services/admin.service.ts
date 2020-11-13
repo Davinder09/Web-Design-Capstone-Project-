@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpResponse } from '@angular/common/http';
-import { User } from './model/user';
+import { User } from '../model/user';
 import { Observable, throwError } from 'rxjs';
 import { catchError, map, retry } from 'rxjs/operators';
 
@@ -15,8 +15,7 @@ export class AdminService {
   
   constructor(private http: HttpClient) {}
 
-  validateLogin(user: User){  
-    console.log(user);
+  validateLogin(user: User){
     return this.http.post(this.url + '/api/users',{
       email : user.email,
       password : user.password

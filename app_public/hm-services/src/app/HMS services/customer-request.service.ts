@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Request } from './model/request';
+import { Request } from '../model/request';
 import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError, map, retry } from 'rxjs/operators';
@@ -14,7 +14,7 @@ export class CustomerRequestService {
   constructor(private http: HttpClient) { }
 
   customerRequest(request: Request){
-        return this.http.post(this.url + '/api/request',{
+        return this.http.post(this.url + '/api/service_request',{
           customer_info : {
             first_name : request.customer_info.first_name,
             last_name : request.customer_info.last_name,
@@ -24,7 +24,8 @@ export class CustomerRequestService {
           },
           snow_removal : request.snow_removal,
           grass_cutting : request.grass_cutting,
-          indoor_cleaning : request.indoor_cleaning          
+          indoor_cleaning : request.indoor_cleaning,
+          service_date: request.service_date         
         }).pipe(
             map(res => res),
             catchError(error => throwError(error.message || error))

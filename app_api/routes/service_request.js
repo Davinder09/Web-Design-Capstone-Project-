@@ -4,11 +4,8 @@ const ctrlService_request = require('../controllers/service_request');
 
 
 router
-    .route('/service_request')    
-    .post(ctrlUser.getSingleUser)
-
-// router
-//     .route('/users/:userid')
-//     .put(ctrlUser.updateUser);
+.route('/service_request')    
+.post(ctrlService_request.createServiceRequest)
+.get(ctrlService_request.getServiceRequests)
 
 module.exports = router;

@@ -38,9 +38,19 @@ app.use('/users', usersRouter);
 const apiRouter =  require('./app_api/routes/user');
 app.use('/api', apiRouter);
 
+var serviceRouter = require('./app_server/routes/service_request');
+app.use('/service_request', serviceRouter);
+
+const serviceRequestAPIRouter =  require('./app_api/routes/service_request');
+app.use('/api', serviceRequestAPIRouter);
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'app_public')));
 
+var employeeRouter = require('./app_server/routes/employee');
+app.use('/employee', employeeRouter);
+
+const employeeRequestAPIRouter =  require('./app_api/routes/employee');
+app.use('/api', employeeRequestAPIRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

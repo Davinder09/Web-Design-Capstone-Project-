@@ -2,26 +2,41 @@ const mongoose = require('mongoose');
 
 
 const services = new mongoose.Schema({
-    first_name:{
+    customer_info: {
+        first_name: {
+            type: String
+        },
+        last_name : {
+            type: String
+        },
+        email: {
+            type: String
+        },
+        phone: {
+            type: String
+        },
+        address: {
+            type: String
+        }
+    },
+    snow_removal:{
+        type: Boolean
+    },
+    grass_cutting:{
+        type: Boolean
+    },
+    indoor_cleaning:{
+        type: Boolean
+    },
+    service_date: {
         type: String
     },
-    last_name:{
-        type:String
+    service_status: {
+        type: Boolean
     },
-    address:{
-        type:String
-    },
-    phone:{
-        type:String
-    },
-    email:{
-        type:String,
-        required: true        
+    employee_assigned: {
+        type: String
     }
-    
-    
-    
-    
 });
 
-mongoose.model('service_request', services);
+mongoose.model('services', services);
