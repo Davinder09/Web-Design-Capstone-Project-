@@ -14,7 +14,9 @@ import { LoginComponent } from './login/login.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { FormsModule } from '@angular/forms';
-import { ContactComponent } from './components/contact/contact.component';
+import { EmployeeComponent } from './employee/employee.component';
+import { AddEmployeeComponent } from './add-employee/add-employee.component';
+import { UpdateEmployeeComponent } from './update-employee/update-employee.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { ContactComponent } from './components/contact/contact.component';
     AboutusComponent,
     LoginComponent,
     DashboardComponent,
-    ContactComponent
+    EmployeeComponent,
+    AddEmployeeComponent,
+    UpdateEmployeeComponent,
   ],
   imports: [
     HttpClientModule,
@@ -44,11 +48,21 @@ import { ContactComponent } from './components/contact/contact.component';
         path: 'login',component: LoginComponent
       },
       {
-        path: 'dashboard',component: DashboardComponent
+         path: 'addEmployee',component: AddEmployeeComponent 
       },
+      {
+         path: 'employee/:employeeId',component: UpdateEmployeeComponent
+      },
+      {
+        path: 'employee',component: EmployeeComponent,
+      },
+      {
+        path: 'dashboard',component: DashboardComponent,
+      }
     ])
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
