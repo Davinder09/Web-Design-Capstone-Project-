@@ -74,8 +74,8 @@
     </div>
 </section>   
 <section id = "form">  
-  <h2>Request a service</h2>
   <div class="service form">
+    <h2 class="text-center">Request a service</h2>
     <form #requestForm ="ngForm"> <!-- #service request Form is the reference variable -->
       <div ngModelGroup="customer_info">
 		  <div class="service-form-group">
@@ -161,7 +161,7 @@
     <br>
   </div>
         
-		<button [disabled]="!requestForm.form.valid" type="submit" class="btn btn-primary" (click)="customerData(requestForm.value)">Submit</button>
+		<button [disabled]="!requestForm.form.valid" type="submit" (click)="customerData(requestForm.value)">Submit</button>
 	  </form> 
 </div>
 </section>  
