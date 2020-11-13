@@ -1,5 +1,6 @@
 header{
     padding: 6px;
+    background-color: gray;
 }
 button {
     margin-top: 10px;
@@ -7,4 +8,8 @@ button {
 }
 .navbar-nav{
     margin: auto;
+}
+.nav-link{
+    color: #01233f;
+    font-size: 20px;
 }

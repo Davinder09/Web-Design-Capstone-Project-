@@ -8,27 +8,43 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { HomepageComponent } from './homepage/homepage.component';
+import { ServicesComponent } from './services/services.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
+import { LoginComponent } from './login/login.component';
+import { HttpClientModule } from '@angular/common/http';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { FormsModule } from '@angular/forms';
+import { ContactComponent } from './components/contact/contact.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    HomepageComponent,
-    AboutusComponent
+    ServicesComponent,
+    AboutusComponent,
+    LoginComponent,
+    DashboardComponent,
+    ContactComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     NgbModule,
+    FormsModule,
     RouterModule.forRoot([
       {
-        path: 'homepage',component: HomepageComponent
+        path: '',component: ServicesComponent
       },
       {
       path: 'aboutus',component: AboutusComponent
+      },
+      {
+        path: 'login',component: LoginComponent
+      },
+      {
+        path: 'dashboard',component: DashboardComponent
       },
     ])
   ],
