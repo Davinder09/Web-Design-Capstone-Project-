@@ -31,6 +31,15 @@ export class CustomerRequestService {
             catchError(error => throwError(error.message || error))
         );
       }
+
+      getCustomerServiceRequests(){
+        return this.http.get(this.url + '/api/service_request')
+        .pipe(
+         map((data: Request[]) => {
+           return data;
+         }), catchError( error => {
+           return throwError( 'Something went wrong!' );
+         })
+       )
+      }
 }
-
-
