@@ -14,6 +14,7 @@
           <th>Service Date</th>
           <th>Service Status</th>
           <th>Employee Assigned</th>
+          <th> Assigned</th>
         </tr>
       </thead>
       <tbody>
@@ -28,7 +29,18 @@
           <td> {{ list.indoor_cleaning }}</td>
           <td> {{ list.service_date }}</td>
           <td> {{ list.service_status }}</td>
-          <td> {{ list.employee_assigned }}</td>
+          <td> {{ list.employee_assigned }}
+            <select name="employees" ng-model="employeeSelect">
+
+              <option value="">--Select Employee--</option>
+              
+              <option *ngFor="let list of employees" value="{{list.first_name}}">{{list.first_name}} {{list.last_name}}</option>
+              
+              </select>
+          </td>
+          <td><button class="btn btn-primary" ng-click="checkselection()" input type="submit" [ngValue]="submit">ASSIGN</button></td>
+
+          
   
         </tr>
       </tbody>
