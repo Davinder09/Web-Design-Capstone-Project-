@@ -14,12 +14,12 @@
           <th>Service Date</th>
           <th>Service Status</th>
           <th>Employee Assigned</th>
-          <th> Assigned</th>
+          <th>Assigned</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let list of serviceRequests">
-  
+          <td hidden="true"> {{list._id}}</td>
           <td> {{ list.customer_info.first_name }} {{list.customer_info.last_name}}</td>
           <td> {{ list.customer_info.address }}</td>
           <td> {{ list.customer_info.phone }}</td>
@@ -29,18 +29,16 @@
           <td> {{ list.indoor_cleaning }}</td>
           <td> {{ list.service_date }}</td>
           <td> {{ list.service_status }}</td>
-          <td> {{ list.employee_assigned }}
-            <select name="employees" ng-model="employeeSelect">
+          <td *ngIf="list.employee_assigned"> {{ list.employee_assigned }}</td>
+          <td *ngIf="!list.employee_assigned">
+            <select name="employees" (change)="onChange($event.target.value)">
 
-              <option value="">--Select Employee--</option>
+              <option>Select an Employee</option>
+              <option *ngFor="let em of employees" value="{{em.first_name}}">{{em.first_name}} {{em.last_name}}</option>
               
-              <option *ngFor="let list of employees" value="{{list.first_name}}">{{list.first_name}} {{list.last_name}}</option>
-              
-              </select>
+            </select>
           </td>
-          <td><button class="btn btn-primary" ng-click="checkselection()" input type="submit" [ngValue]="submit">ASSIGN</button></td>
-
-          
+          <td><button [disabled]="list.employee_assigned !== ''" class="btn btn-primary" (click) ="assignEmployee(list)" input type="submit" [ngValue]="submit">ASSIGN</button></td>       
   
         </tr>
       </tbody>

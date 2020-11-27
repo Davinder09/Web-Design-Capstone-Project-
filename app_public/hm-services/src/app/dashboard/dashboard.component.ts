@@ -13,10 +13,16 @@ import { EmployeeServiceService } from '../HMS services/employee-service.service
 })
 export class DashboardComponent implements OnInit {
 
+  employeeAssigned;
   serviceRequests: Request [];
   employees: Employee [];
 
-  constructor(private customerRequestService: CustomerRequestService, private employyeReq: EmployeeServiceService) { }
+  constructor(
+
+    private customerRequestService: CustomerRequestService, 
+    private employyeReq: EmployeeServiceService
+    
+    ) { }
 
 
   ngOnInit() {
@@ -33,4 +39,22 @@ export class DashboardComponent implements OnInit {
     });
   }
 
+  onChange(employeeName) {
+    this.employeeAssigned = employeeName;
+  }
+
+  assignEmployee(service: Request){  
+    if(service != null){
+      service.employee_assigned = this.employeeAssigned;
+      this.customerRequestService.assignEmployee(service).subscribe((result: any) => {
+        alert("Employee assigned successfully");
+      }, error => {
+        console.log('error is ', error);
+        alert(error.message);
+      });
+    } else {
+        alert('Invalid selection');        
+    }
+
+  }
 }
