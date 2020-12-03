@@ -22,6 +22,20 @@ p{
 }
 img{
 	height: 300px;
-	width: 320px;
+  width: 320px;
+  margin: 10px;
 	border: 2px solid black;
 }
+
+
+@media screen and (max-width: 600px) {
+  .map-responsive{
+    overflow:hidden;
+    padding-bottom:56.25%;
+    position:relative;
+    height:0;
+  }
+}
+
+
+

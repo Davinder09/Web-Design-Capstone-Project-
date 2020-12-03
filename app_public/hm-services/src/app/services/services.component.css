@@ -58,3 +58,10 @@ p{
     background-color: #01233f;
     color: #ffffff;
   }
+  @media screen and (max-width: 600px) {
+    .form  {
+      width: 100%;
+      margin-top: 0;
+    }
+  }
+
