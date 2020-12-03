@@ -41,8 +41,8 @@
             </div>
           </td>
           <td>
-            <button *ngIf="list.employee_assigned === '' || (editMode === list._id)" class="btn btn-primary" (click) ="assignEmployee(list)" input type="submit" [ngValue]="submit">ASSIGN</button> &nbsp;
-            <button *ngIf="list.employee_assigned !== ''  && (editMode !== list._id)" class="btn btn-primary" (click) ="editAssignEmployee(list)" input type="submit" [ngValue]="submit">EDIT</button>
+            <button title="Assign Employee" *ngIf="list.employee_assigned === '' || (editMode === list._id)" class="btn btn-primary" (click) ="assignEmployee(list)" input type="submit" [ngValue]="submit">ASSIGN</button> &nbsp;
+            <button title="Change Employee Assigned" *ngIf="list.employee_assigned !== ''  && (editMode !== list._id)" class="btn btn-primary" (click) ="editAssignEmployee(list)" input type="submit" [ngValue]="submit">EDIT</button>
           </td>      
   
         </tr>

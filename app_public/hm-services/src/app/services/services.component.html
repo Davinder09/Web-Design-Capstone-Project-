@@ -1,7 +1,7 @@
 <body>
    <section id="company">
     <div class ="container">
-      <img id="homeimg" src="../../assets/img/tractor.jpg" >
+      <img id="homeimg" title="Snow Removal Service" src="../../assets/img/tractor.jpg" alt="Snow Removal Service">
     </div>
  </section>
  <section id="tools">
@@ -9,30 +9,30 @@
     <h3>When we are prepared to perform snow expulsion administrations</h3>
     <h4>Equipments we use to provide best services</h4>
     <div class =" row">
-      <div class = "col-md-4">
-        <img src="../../assets/img/snow shoval.jpg">
+      <div class = "col-md-4" title="Garant Poly Sleigh Shovel">
+        <img src="../../assets/img/snow shoval.jpg" alt="Garant Poly Sleigh Shovel">
         <p>Garant Poly Sleigh Shovel</p>
       </div>
-      <div class = "col-md-4">
-        <img src="../../assets/img/vertex.jpg">
+      <div class = "col-md-4" title="Vertex Heavy Duty Rolling">
+        <img src="../../assets/img/vertex.jpg" alt="Vertex Heavy Duty Rolling">
         <p>Vertex Heavy Duty Rolling</p>
       </div>
-      <div class = "col-md-4">
-        <img src="../../assets/img/Toroman.jpg">
+      <div class = "col-md-4" title="Cordless Power Snow Shovel">
+        <img src="../../assets/img/Toroman.jpg" alt="Cordless Power Snow Shovel">
         <p>Cordless Power Snow Shovel</p>
       </div>
     </div>
     <div class =" row">
-      <div class = "col-md-4">
-        <img src="../../assets/img/Snowrator-Single-Path.jpg">
+      <div class = "col-md-4" title="Snow Mover & Ice Scraper">
+        <img src="../../assets/img/Snowrator-Single-Path.jpg" alt="Snow Mover & Ice Scraper">
         <p>Snow Mover & Ice Scraper</p>
       </div>
-      <div class = "col-md-4">
-        <img src="../../assets/img/WORX.jpg">
+      <div class = "col-md-4" title="WORX Wheelbarrow Snow Plow">
+        <img src="../../assets/img/WORX.jpg" alt="WORX Wheelbarrow Snow Plow">
         <p>WORX Wheelbarrow Snow Plow</p>
       </div>
-      <div class = "col-md-4">
-        <img src="../../assets/img/snow joe.jpg">
+      <div class = "col-md-4" title="Snow Joe Cordless Power Snow Shovel">
+        <img src="../../assets/img/snow joe.jpg" alt="Snow Joe Cordless Power Snow Shovel">
         <p>Snow Joe Cordless Power Snow Shovel</p>
       </div>
       </div>
@@ -42,16 +42,16 @@
   <h3>Garden Maintenance for Homeowners</h3>
   <h5>HM administration, we generally put our clients first by giving broad choices to grass and nursery support. From turf care to pruning and occasional tidy up, we can deal with it just for you. </h5>
     <div class =" row">
-      <div class = "col-md-4">
-        <img src="../../assets/img/hybrid.jpeg">
+      <div class = "col-md-4" title="Natural Lawn Care">
+        <img src="../../assets/img/hybrid.jpeg" alt="Natural Lawn Care">
         <p>Natural Lawn Care — For those that lean toward eco-accommodating grass care.</p>
       </div>
-      <div class = "col-md-4">
-        <img src="../../assets/img/lawn care.jpg">
+      <div class = "col-md-4" title="Hybrid Lawn Care">
+        <img src="../../assets/img/lawn care.jpg" alt="Hybrid Lawn Care">
         <p>Hybrid Lawn Care — As a blend of our natural and conventional items.</p>
       </div>
-      <div class = "col-md-4">
-        <img src="../../assets/img/simple.jpg">
+      <div class = "col-md-4" title="Simple Lawn Care">
+        <img src="../../assets/img/simple.jpg" alt="Simple Lawn Care">
         <p>Simple Lawn Care — using basic synthetic medicines.</p>
       </div>
   </div>
@@ -59,16 +59,16 @@
 <section id ="team">  
   <h3>Our Team</h3>
     <div class ="row">
-      <div class = "col-md-4">
-        <img src="../../assets/img/team 3.jpg">
+      <div class = "col-md-4" title="Catherine Moore - Organizer">
+        <img src="../../assets/img/team 3.jpg" alt="Catherine Moore - Organizer">
         <p>Catherine Moore - Organizer</p>
       </div>
-      <div class = "col-md-4">
-        <img src="../../assets/img/Team-memeber-13.png">
+      <div class = "col-md-4" title="Colin Shannon - Manager">
+        <img src="../../assets/img/Team-memeber-13.png" alt="Colin Shannon - Manager">
         <p>Colin Shannon - Manager</p>        
       </div>
-      <div class = "col-md-4">
-        <img src="../../assets/img/Team-memeber-9.png">
+      <div class = "col-md-4" title="Dembe Ritz - Supervisor">
+        <img src="../../assets/img/Team-memeber-9.png" alt="Dembe Ritz - Supervisor">
         <p>Dembe Ritz - Supervisor</p>
       </div>
     </div>
@@ -80,7 +80,7 @@
       <div ngModelGroup="customer_info">
 		  <div class="service-form-group">
 		    <label>Email:</label>
-		    <input type="email" #emailRef="ngModel" class="form-control" name="email"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" ngModel required/>
+		    <input type="email" placeholder="ex: john@gmail.com" #emailRef="ngModel" class="form-control" name="email"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" ngModel required/>
 		    <div *ngIf="emailRef.errors && (emailRef.dirty || emailRef.touched)" class="alert alert-danger">
 			  <div [hidden]="!emailRef.errors.pattern">
 			    Please enter a valid email.
@@ -92,7 +92,7 @@
   </div>
   <div class="service-form-group">
     <label>First Name:</label>
-    <input type="text" #fnameRef="ngModel" class="form-control" name="first_name" ngModel required/>
+    <input type="text" placeholder="ex: John" #fnameRef="ngModel" class="form-control" name="first_name" ngModel required/>
       <div *ngIf="fnameRef.errors && (fnameRef.dirty || fnameRef.touched)" class="alert alert-danger">
         <div [hidden]="!fnameRef.errors.required">
 			    Please enter your First Name.
@@ -101,7 +101,7 @@
   </div>
   <div class="service-form-group">
     <label>Last Name:</label>
-    <input type="text" #lnameRef="ngModel" class="form-control" name="last_name" ngModel required/>
+    <input type="text" placeholder="ex: Wick" #lnameRef="ngModel" class="form-control" name="last_name" ngModel required/>
       <div *ngIf="lnameRef.errors && (lnameRef.dirty || lnameRef.touched)" class="alert alert-danger">
         <div [hidden]="!lnameRef.errors.required">
 			    Please enter your Last Name.
@@ -125,7 +125,7 @@
   </div>
   <div class="service-form-group">
     <label>Address:</label>
-    <input type="text" #addressRef="ngModel" class="form-control" name="address" ngModel required/>
+    <input type="text" #addressRef="ngModel" placeholder="enter your address" class="form-control" name="address" ngModel required/>
       <div *ngIf="addressRef.errors && (addressRef.dirty || addressRef.touched)" class="alert alert-danger">
         <div [hidden]="!addressRef.errors.required">
 			    Please enter your address.
