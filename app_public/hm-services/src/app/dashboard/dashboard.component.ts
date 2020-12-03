@@ -16,6 +16,7 @@ export class DashboardComponent implements OnInit {
   employeeAssigned;
   serviceRequests: Request [];
   employees: Employee [];
+  editMode: string;
 
   constructor(
 
@@ -43,7 +44,8 @@ export class DashboardComponent implements OnInit {
     this.employeeAssigned = employeeName;
   }
 
-  assignEmployee(service: Request){  
+  assignEmployee(service: Request){
+    this.editMode = '';
     if(service != null){
       service.employee_assigned = this.employeeAssigned;
       this.customerRequestService.assignEmployee(service).subscribe((result: any) => {
@@ -56,5 +58,9 @@ export class DashboardComponent implements OnInit {
         alert('Invalid selection');        
     }
 
+  }
+
+  editAssignEmployee(service: Request){
+    this.editMode = service._id;
   }
 }
