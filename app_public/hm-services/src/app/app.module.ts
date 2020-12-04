@@ -17,6 +17,7 @@ import { FormsModule } from '@angular/forms';
 import { EmployeeComponent } from './employee/employee.component';
 import { AddEmployeeComponent } from './add-employee/add-employee.component';
 import { UpdateEmployeeComponent } from './update-employee/update-employee.component';
+import { PaymentComponent } from './payment/payment.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { UpdateEmployeeComponent } from './update-employee/update-employee.compo
     EmployeeComponent,
     AddEmployeeComponent,
     UpdateEmployeeComponent,
+    PaymentComponent,
   ],
   imports: [
     HttpClientModule,
@@ -58,6 +60,9 @@ import { UpdateEmployeeComponent } from './update-employee/update-employee.compo
       },
       {
         path: 'dashboard',component: DashboardComponent,
+      },
+      {
+        path: 'payment', component: PaymentComponent
       }
     ])
   ],

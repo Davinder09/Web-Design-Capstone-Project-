@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CustomerRequestService } from '../HMS services/customer-request.service';
 import { Request } from './../model/request';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-services',
@@ -12,7 +13,7 @@ export class ServicesComponent implements OnInit {
 
   public request: Request
 
-  constructor(private requestService: CustomerRequestService) { }
+  constructor(private requestService: CustomerRequestService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -36,5 +37,6 @@ export class ServicesComponent implements OnInit {
     } else {
         alert('Invalid form entries');        
     }
+    this.router.navigateByUrl('/payment');
   }
 }
