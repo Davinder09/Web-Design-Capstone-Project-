@@ -47,5 +47,5 @@ process.on('SIGTERM', () => {
 });
 
 require('./users');
-
 require('./service_request');
+require('./employee');

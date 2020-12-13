@@ -1,1 +1,50 @@
-<p>dashboard works!</p>
+<div class="jumbotron">
+    <h3 class="text-center">Service requests</h3>
+    <br />
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Customer Name</th>
+          <th>Address</th>
+          <th>Phone</th>
+          <th>Email</th>
+          <th>Snow Removal</th>
+          <th>Grass Cutting</th>
+          <th>Indoor Cleaning</th>
+          <th>Service Date</th>
+          <th>Service Status</th>
+          <th>Employee Assigned</th>
+          <th>Assign</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let list of serviceRequests">
+          <td hidden="true"> {{list._id}}</td>
+          <td> {{ list.customer_info.first_name }} {{list.customer_info.last_name}}</td>
+          <td> {{ list.customer_info.address }}</td>
+          <td> {{ list.customer_info.phone }}</td>
+          <td> {{ list.customer_info.email }}</td>
+          <td> {{ list.snow_removal }}</td>
+          <td> {{ list.grass_cutting }}</td>
+          <td> {{ list.indoor_cleaning }}</td>
+          <td> {{ list.service_date }}</td>
+          <td> {{ list.service_status }}</td>
+          <td> 
+            <div *ngIf="list.employee_assigned">{{ list.employee_assigned }}</div>
+            <div *ngIf="!list.employee_assigned || (editMode === list._id)">
+              <select name="employees" (change)="onChange($event.target.value)">
+
+                <option>Select an Employee</option>
+                <option *ngFor="let em of employees" value="{{em.first_name}}">{{em.first_name}} {{em.last_name}}</option>
+                
+              </select>
+            </div>
+          </td>
+          <td>
+            <button title="Assign Employee" *ngIf="list.employee_assigned === '' || (editMode === list._id)" class="btn btn-primary" (click) ="assignEmployee(list)" input type="submit" [ngValue]="submit">ASSIGN</button> &nbsp;
+            <button title="Change Employee Assigned" *ngIf="list.employee_assigned !== ''  && (editMode !== list._id)" class="btn btn-primary" (click) ="editAssignEmployee(list)" input type="submit" [ngValue]="submit">EDIT</button>
+          </td>      
+  
+        </tr>
+      </tbody>
+    </table>
